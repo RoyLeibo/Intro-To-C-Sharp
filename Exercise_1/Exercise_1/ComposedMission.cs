@@ -6,27 +6,34 @@ using System.Threading.Tasks;
 
 namespace Exercise_1
 {
+    // This class handles a composed mission.
+    // In it's constructor it gets the mission name and
+    // every time the user wants to add some function into it
+    // he should use the "Add" function and adds it to the function's list.
+    // The class inherits the "IMission" interface and it's "Calculate"
+    // function activates each function stored in the list.
+
     class ComposedMission : IMission
     {
-        public event EventHandler<double> OnCalculate;
-        private List<Func<double, double>> funcList;
-        private String name;
-        public String Name
+        public event EventHandler<double> OnCalculate; // event handler
+        private List<Func<double, double>> funcList; // list of functions
+        private String name; // the mission name
+        public String Name // the name property
         {
             get
             {
                 return name;
             }
         }
-        private String type;
-        public String Type
+        private String type; // the mission type
+        public String Type // the type property
         {
             get
             {
                 return type;
             }
         }
-
+        // the class's constructor. It's parameter is the mission name
         public ComposedMission(String name)
         {
             this.name = name;
@@ -34,22 +41,25 @@ namespace Exercise_1
             this.funcList = new List<Func<double, double>>();
         }
 
+        // This function gets a new function and adds it into the functions list
+        // The function returns the class itself to allow chaining of functions to add.
         public ComposedMission Add(Func<double,double> newFunc)
         {
             this.funcList.Add(newFunc);
             return this;
         }
 
+        // When this function is activate it activates all the functions from
+        // the functions list.
         public double Calculate(double value)
         {
-            OnCalculate?.Invoke(this, value);
             double result = value;
-            int counter = 0;
-            foreach (var func in this.funcList)
+            foreach (var func in this.funcList) // run throw all list
             {
-                counter++;
-                result = func(result);
+                result = func(result); // calculate the function and keep the result for next iteration
             }
+            // if the "OnCalculate" event is not empty, operate each function stored in it.
+            OnCalculate?.Invoke(this, result); 
             return result;
         }
     }
