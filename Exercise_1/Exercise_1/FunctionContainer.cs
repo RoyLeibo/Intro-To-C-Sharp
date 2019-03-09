@@ -8,7 +8,7 @@ namespace Exercise_1
 {
     class FunctionContainer
     {
-        Dictionary<String, Func<double, double>> funcList;
+        Dictionary<String, Func<double,double>> funcList;
 
         public FunctionContainer()
         {
@@ -19,6 +19,12 @@ namespace Exercise_1
         {
             this.funcList[key] = value;
         }
+
+        //public static FunctionContainer operator =(FunctionContainer funcList, Func<double,double> thisFunc)
+        //{
+
+
+        //}
 
         public Func<double, double> getFunc(String key)
         {
