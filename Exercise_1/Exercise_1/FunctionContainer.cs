@@ -10,14 +10,14 @@ namespace Exercise_1
     // with a key of String which represents the function's name and the
     // function itself as value.
 
-    class FunctionContainer
+    class FunctionsContainer
     {
-        private Dictionary<String, Func<double,double>> functionsContainer; // the functions dictionary
-        public Dictionary<String, Func<double, double>> FunctionsContainer // the dictionary property
+        private Dictionary<String, Func<double,double>> functionsDict; // the functions dictionary
+        public Dictionary<String, Func<double, double>> FunctionsDict // the dictionary property
         {
             get
             {
-                return this.functionsContainer;
+                return this.functionsDict;
             }
         }
 
@@ -30,38 +30,38 @@ namespace Exercise_1
         {
             get
             {
-                if (!functionsContainer.ContainsKey(key)) // if the dictionary is not contain some key
+                if (!functionsDict.ContainsKey(key)) // if the dictionary is not contain some key
                 {
-                    this.functionsContainer[key] = val => val; // add this key with a function that does nothing
+                    this.functionsDict[key] = val => val; // add this key with a function that does nothing
                 }
-                return functionsContainer[key]; // return the function with the key of "key"
+                return functionsDict[key]; // return the function with the key of "key"
             }
             set
             {
-                if (!functionsContainer.ContainsKey(key)) // if the dictionary is not contain some key
+                if (!functionsDict.ContainsKey(key)) // if the dictionary is not contain some key
                 {
-                    functionsContainer.Add(key, value); // add this key with a function that does nothing
+                    functionsDict.Add(key, value); // add this key with a function that does nothing
                 }
                 else
                 {
-                    functionsContainer[key] = value; // change the existing function with "key" to a new function 
+                    functionsDict[key] = value; // change the existing function with "key" to a new function 
                 }
             }
         }
 
         // The class's constructor
-        public FunctionContainer()
+        public FunctionsContainer()
         {
-            functionsContainer = new Dictionary<String, Func<double, double>>() ;
+            this.functionsDict = new Dictionary<String, Func<double, double>>() ;
         }
         
         // this function returns a list of all the keys in the dictionary
         public List<String> getAllMissions()
         {
             List<String> FunctionsList = new List<string>();
-            for (int i = 0; i < this.functionsContainer.Count; i++)
+            for (int i = 0; i < this.functionsDict.Count; i++)
             {
-                FunctionsList.Add(functionsContainer.ElementAt(i).Key);
+                FunctionsList.Add(functionsDict.ElementAt(i).Key);
             }
             return FunctionsList;
         }

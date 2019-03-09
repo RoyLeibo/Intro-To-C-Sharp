@@ -1,0 +1,75 @@
+commit 31e001ddf86b609627e3bf1f048e2c9faf289d08
+Author: Roy Leibovitz <royleibo212@gmail.com>
+Date:   Sun Mar 10 00:42:34 2019 +0200
+
+    more comments
+
+6	4	Exercise_1/Exercise_1/IMission.cs
+
+commit 3e4a35f46911c930018c7a206a5bc1b054e3b0d6
+Author: Roy Leibovitz <royleibo212@gmail.com>
+Date:   Sun Mar 10 00:27:05 2019 +0200
+
+    adding comments
+
+23	13	Exercise_1/Exercise_1/ComposedMission.cs
+25	25	Exercise_1/Exercise_1/FunctionContainer.cs
+20	9	Exercise_1/Exercise_1/SingleMission.cs
+
+commit 4371dc9a7c35e6fe780c756426347f6997a95a6d
+Author: Roy Leibovitz <royleibo212@gmail.com>
+Date:   Sat Mar 9 21:56:48 2019 +0200
+
+    turning FunctionContainer to Indexer
+
+0	2	Exercise_1/Exercise_1/ComposedMission.cs
+44	9	Exercise_1/Exercise_1/FunctionContainer.cs
+84	37	Exercise_1/Exercise_1/Program.cs
+0	1	Exercise_1/Exercise_1/SingleMission.cs
+
+commit 976c761055282096221f819749f15cac176f50fd
+Author: Roy Leibovitz <royleibo212@gmail.com>
+Date:   Sat Mar 9 19:34:33 2019 +0200
+
+    Create mission list
+
+2	0	Exercise_1/Exercise_1/ComposedMission.cs
+1	1	Exercise_1/Exercise_1/IMission.cs
+12	0	Exercise_1/Exercise_1/Program.cs
+4	2	Exercise_1/Exercise_1/SingleMission.cs
+
+commit 0c1cc507196456d7e0b960ca64692d56000a5e02
+Author: Roy Leibovitz <royleibo212@gmail.com>
+Date:   Sat Mar 9 15:43:32 2019 +0200
+
+    Composed/Single IMission build
+
+56	0	Exercise_1/Exercise_1/ComposedMission.cs
+3	0	Exercise_1/Exercise_1/Exercise_1.csproj
+7	1	Exercise_1/Exercise_1/FunctionContainer.cs
+18	0	Exercise_1/Exercise_1/IMission.cs
+27	2	Exercise_1/Exercise_1/Program.cs
+41	0	Exercise_1/Exercise_1/SingleMission.cs
+
+commit 278b2599a1b6379497ac7a6cd6919f68555c0de2
+Author: Roy Leibovitz <royleibo212@gmail.com>
+Date:   Fri Mar 8 21:51:04 2019 +0200
+
+    First Upload
+
+63	0	.gitattributes
+261	0	.gitignore
+22	0	Exercise_1/Exercise_1.sln
+6	0	Exercise_1/Exercise_1/App.config
+53	0	Exercise_1/Exercise_1/Exercise_1.csproj
+28	0	Exercise_1/Exercise_1/FunctionContainer.cs
+24	0	Exercise_1/Exercise_1/Program.cs
+36	0	Exercise_1/Exercise_1/Properties/AssemblyInfo.cs
+
+commit 1f632157703e1c3c1a23e32f839db0f08a03d5b6
+Author: RoyLeibo <42297127+RoyLeibo@users.noreply.github.com>
+Date:   Fri Mar 8 21:39:59 2019 +0200
+
+    Initial commit
+
+1	0	README.md
