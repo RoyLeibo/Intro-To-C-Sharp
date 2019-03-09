@@ -8,27 +8,62 @@ namespace Exercise_1
 {
     class FunctionContainer
     {
-        Dictionary<String, Func<double,double>> funcList;
+        private Dictionary<String, Func<double,double>> functionsContainer;
+        public Dictionary<String, Func<double, double>> FunctionsContainer
+        {
+            get
+            {
+                return this.functionsContainer;
+            }
+        }
+
+        public Func<double, double> this[String key]
+        {
+            get
+            {
+                if (functionsContainer.ContainsKey(key))
+                {
+                    return functionsContainer[key];
+                }
+                else
+                {
+                    return this.DoNothing;
+                }
+            }
+            set
+            {
+                functionsContainer.Add(key, value);
+            }
+        }
+
+        double DoNothing(double x)
+        {
+            return x;
+        }
 
         public FunctionContainer()
         {
-            funcList = new Dictionary<String, Func<double, double>>() ;
+            functionsContainer = new Dictionary<String, Func<double, double>>() ;
         }
 
         public void setNewFunc(String key, Func<double, double> value)
         {
-            this.funcList[key] = value;
+            this.functionsContainer[key] = value;
         }
 
-        //public static FunctionContainer operator =(FunctionContainer funcList, Func<double,double> thisFunc)
-        //{
-
-
-        //}
+        public List<String> getAllMissions()
+        {
+            List<String> FunctionsList = new List<string>();
+            for (int i = 0; i < this.functionsContainer.Count; i++)
+            {
+                FunctionsList.Add(functionsContainer.ElementAt(i).Key);
+            }
+            return FunctionsList;
+        }
 
         public Func<double, double> getFunc(String key)
         {
-            return this.funcList[key];
+            return this.functionsContainer[key];
         }
     }
 }

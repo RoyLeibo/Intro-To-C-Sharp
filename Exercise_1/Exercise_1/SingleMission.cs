@@ -36,7 +36,6 @@ namespace Exercise_1
         public double Calculate(double value)
         {
             OnCalculate?.Invoke(this, value);
-            Console.WriteLine($"This is {this.name} with the value {value} and the result of {this.thisFunc(value)}");
             return this.thisFunc(value);
         }
     }

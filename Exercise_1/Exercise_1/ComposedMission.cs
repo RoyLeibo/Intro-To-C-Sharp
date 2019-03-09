@@ -48,9 +48,7 @@ namespace Exercise_1
             foreach (var func in this.funcList)
             {
                 counter++;
-                Console.Write($"This is function {this.name} with the parameter {result}");
                 result = func(result);
-                Console.WriteLine($" and the result is {result}");
             }
             return result;
         }
