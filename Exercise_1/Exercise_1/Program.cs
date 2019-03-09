@@ -24,9 +24,21 @@ namespace Exercise_1
             missionList.Add(sm);
             missionList.Add(cm);
             missionList.Add(cm2);
+
+            foreach (var m in missionList)
+            {
+                m.OnCalculate += SqrtHandler;
+            }
+
             RunMissions(missionList, 2);
 
         }
+
+        public static EventHandler<double> SqrtHandler = (sender, val) =>
+        {
+            IMission mission = sender as IMission;
+            Console.WriteLine($"Hello I am {mission.Name} in SqrtHandler!");
+        };
 
         static void RunMissions(List<IMission> missionList, double value)
         {

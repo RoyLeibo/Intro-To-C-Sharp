@@ -8,6 +8,7 @@ namespace Exercise_1
 {
     class ComposedMission : IMission
     {
+        public event EventHandler<double> OnCalculate;
         private List<Func<double, double>> funcList;
         private String name;
         public String Name
@@ -41,6 +42,7 @@ namespace Exercise_1
 
         public double Calculate(double value)
         {
+            OnCalculate?.Invoke(this, value);
             double result = value;
             int counter = 0;
             foreach (var func in this.funcList)

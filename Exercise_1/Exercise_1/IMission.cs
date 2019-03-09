@@ -8,7 +8,7 @@ namespace Exercise_1
 {
     public interface IMission
     {
-        
+        event EventHandler<double> OnCalculate;
 
         String Name { get; }
         String Type { get; }

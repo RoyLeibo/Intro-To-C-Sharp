@@ -8,20 +8,21 @@ namespace Exercise_1
 {
     class SingleMission : IMission
     {
+        public event EventHandler<double> OnCalculate;
         private Func<double, double> thisFunc;
         private String name;
         public String Name
         {
             get
             {
-                return name;
+                return this.name;
             }
         }
         private String type;
         public String Type {
             get
             {
-                return type;
+                return this.type;
             }
         }
         
@@ -34,6 +35,7 @@ namespace Exercise_1
 
         public double Calculate(double value)
         {
+            OnCalculate?.Invoke(this, value);
             Console.WriteLine($"This is {this.name} with the value {value} and the result of {this.thisFunc(value)}");
             return this.thisFunc(value);
         }
